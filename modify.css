@@ -16,6 +16,10 @@
 }
 #quest #questions {
   height: 260px;
+  padding: 0 10px;
+}
+#quest #progress-bar-child {
+  background-color: #ecddb6;
 }
 #quest label:has(input[type="radio"]) {
   opacity: 0.5;
@@ -29,6 +33,7 @@
   font-size: 18px;
   text-align: center;
   font-weight: 600;
+  margin: 0 10px;
 }
 #quest label:not(:last-child) {
   margin-bottom: 5px;

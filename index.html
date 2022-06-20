@@ -141,7 +141,7 @@
             loadingAnimation = document.querySelector('.loading-form'),
             delayTime = 1200,
             errorText = document.querySelector('#error-text');
-        function loadingScreen(){
+        var loadingScreen = function (){
             loadingAnimation.classList.remove('active');
         }
         question.addEventListener('click', e=>{
@@ -150,12 +150,9 @@
                 loadingAnimation.classList.add('active');
                 setTimeout(loadingScreen, delayTime)
             }
-        })
-        submit.addEventListener('click', function (e) {
-            console.log('tyes')
-            if(errorText.innerText == 'OK') {
-                setTimeout(loadingScreen, delayTime)
-            }
+            // else if (current.classList.contains('pointer') && errorText.innerText.toLocaleLowerCase() == 'ok') {
+            //     setTimeout(loadingScreen, delayTime)
+            // }
         })
     })()
 </script>
