@@ -1,7 +1,18 @@
 #quest {
-  background-color: #e6f8fe;
+  background-color: transparent;
   height: 320px;
   position: relative;
+  border: none;
+}
+#quest #error-bar-form {
+  border: none !important;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  padding-left: 10px;
+}
+#quest #text-bar-progress {
+  margin-left: 10px;
 }
 #quest #questions {
   height: 260px;

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://personalinjurytip.com/sandbox/css/animations.css">
     <link rel="stylesheet" href="https://personalinjurytip.com/sandbox/css/index.css">
     <link rel="stylesheet" href="https://personalinjurytip.com/sandbox/css/media-queries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="modify.css">
 </head>
 <body>
@@ -23,8 +24,55 @@
     <p class="about"> 100's of people are injured in car accidents every day and <strong class="about">most have serious injuries that deserve compensation.</strong> Insurance companies know this and they try to settle a claim quickly for as little as possible by employing their own legal experts. This is why having an Injury Attorney on your side is essential for all accident cases today.</p>
     <strong class="title m-t-12">You May be Entitled to Maximum Compensation. Take this 60 second qualifier and find out if you're eligible:</strong>
 
+<!--    <form id="quest" class="flex m-t-26" action="">-->
+<!--        <div id="error-bar-form" class="full-w">-->
+<!--            <p id="error-text">OK</p>-->
+<!--        </div>-->
+<!--        <div id="questions" class="full-w " value="asdasdas" name="sadasd">-->
+<!--            <div id="handle-quest-animations" class="flex appear">-->
+
+<!--                <label for="question">How were you hurt?</label>-->
+<!--                <label for="1">-->
+<!--                    <input type="radio" name="answer" id="1">-->
+<!--                    Car Accident-->
+<!--                </label for="2">-->
+<!--                <label>-->
+<!--                    <input type="radio" name="answer" id="2">-->
+<!--                    Truck Accident-->
+<!--                </label>-->
+<!--                <label for="3">-->
+<!--                    <input type="radio" name="answer" id="3">-->
+<!--                    Bicycle or Pedestrian Accident-->
+<!--                </label>-->
+<!--                <label for="4">-->
+<!--                    <input type="radio" name="answer" id="4">-->
+<!--                    Motorcycle Accident-->
+<!--                </label>-->
+<!--                <label for="5">-->
+<!--                    <input type="radio" name="answer" id="5">-->
+<!--                    Other Motor Vehicle Accident or Injury-->
+<!--                </label>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div id="progress-bar-form" class="full-w">-->
+<!--            <div id="progress-bar-parent">-->
+<!--                <p id="text-bar-progress">0%</p>-->
+<!--                <div id="progress-bar-child"></div>-->
+<!--            </div>-->
+<!--            <button id="submit" class="pointer">NEXT</button>-->
+<!--        </div>-->
+<!--        <div class="loading-form" hidden>-->
+<!--            <h3 class="quiz-question blink">Processing Your Answer</h3>-->
+<!--            <h5 class="quiz-question">Please wait a moment...</h5>-->
+<!--            <img src="https://updatedmedicareoffers.com/ppc/1/assets/img/loading.gif" class="spinner">-->
+<!--        </div>-->
+<!--    </form>-->
+
     <form id="quest" class="flex m-t-26" action="">
         <div id="error-bar-form" class="full-w">
+            <i class="fa-solid fa-circle-info"></i>
             <p id="error-text">OK</p>
         </div>
         <div id="questions" class="full-w " value="asdasdas" name="sadasd">
@@ -90,14 +138,23 @@
 <script>
     (function(){
         let question = document.getElementById('quest'),
-            loadingAnimation = document.querySelector('.loading-form')
+            loadingAnimation = document.querySelector('.loading-form'),
+            delayTime = 1200,
+            errorText = document.querySelector('#error-text');
+        function loadingScreen(){
+            loadingAnimation.classList.remove('active');
+        }
         question.addEventListener('click', e=>{
             let current = e.target;
             if(current.getAttribute('name') === 'answer') {
                 loadingAnimation.classList.add('active');
-                setTimeout(()=>{
-                    loadingAnimation.classList.remove('active');
-                }, 1200)
+                setTimeout(loadingScreen, delayTime)
+            }
+        })
+        submit.addEventListener('click', function (e) {
+            console.log('tyes')
+            if(errorText.innerText == 'OK') {
+                setTimeout(loadingScreen, delayTime)
             }
         })
     })()
