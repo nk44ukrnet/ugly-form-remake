@@ -1,0 +1,88 @@
+#quest {
+  background-color: #e6f8fe;
+  height: 320px;
+  position: relative;
+}
+#quest #questions {
+  height: 260px;
+}
+#quest label:has(input[type="radio"]) {
+  opacity: 0.5;
+}
+#quest label {
+  background-color: #e9a800;
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 6px 5px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+#quest label:not(:last-child) {
+  margin-bottom: 5px;
+}
+#quest input[type="radio"] {
+  display: none;
+}
+#quest input[type="email"],
+#quest input[type="tel"],
+#quest input[type="text"] {
+  padding: 7px;
+  width: 95%;
+}
+#quest #decline-quest strong {
+  font-size: 25px;
+}
+#quest label[for="question"] {
+  background-color: transparent;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.loading-form {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 222222222225;
+  flex-direction: column;
+  gap: 10px;
+}
+.loading-form.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.loading-form .quiz-question {
+  transition: all 1s linear;
+}
+.loading-form h5.quiz-question {
+  font-size: 22px;
+}
+.loading-form .blink {
+  animation: 1s linear infinite blink-animation;
+  -webkit-animation: 1s linear infinite blink-animation;
+  font-size: 25px;
+}
+.loading-form .spinner {
+  max-height: 40px;
+}
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=modify.css.map */

@@ -1,0 +1,101 @@
+body {
+}
+
+#quest {
+  background-color: rgb(230, 248, 254);
+  height: 320px;
+  position: relative;
+
+  #questions {
+    height: 260px;
+  }
+
+  label:has(input[type="radio"]) {
+    opacity: 0.5;
+  }
+
+  label {
+    background-color: rgb(233, 168, 0);
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 6px 5px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="email"], input[type="tel"], input[type="text"] {
+    padding: 7px;
+    width: 95%;
+  }
+
+  #decline-quest strong {
+    font-size: 25px;
+  }
+
+  label[for="question"] {
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.loading-form {
+  opacity: 0;
+  pointer-events: none;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 222222222225;
+  flex-direction: column;
+  gap: 10px;
+
+  .quiz-question {
+    transition: all 1s linear;
+
+  }
+  h5.quiz-question {
+    font-size: 22px;
+  }
+  .blink {
+    animation: 1s linear infinite blink-animation;
+    -webkit-animation: 1s linear infinite blink-animation;
+    font-size: 25px;
+  }
+  .spinner {
+    max-height: 40px;
+  }
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
